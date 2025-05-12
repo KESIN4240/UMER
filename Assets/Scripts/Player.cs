@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
     public int speed;
     public int turnSpeed;
 
-    private float horizontalInput;
+    public float horizontalInput;
     private float verticalInput;
     private Vector3 startPosition;
 
