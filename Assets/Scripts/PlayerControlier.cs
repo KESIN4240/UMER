@@ -4,6 +4,7 @@ public class PlayerControlier : MonoBehaviour
 {
     public float jumpForce;
     public float gravityModifier;
+    public bool isGameOver;
 
     private Rigidbody rigidbody;
     private bool isOnGround = true;
@@ -26,6 +27,13 @@ public class PlayerControlier : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.TryGetComponent(out Obstacle obstacle))
+        {
+            isGameOver = true;
+
+            return;
+        }
+
         isOnGround = true;
     }
 }
